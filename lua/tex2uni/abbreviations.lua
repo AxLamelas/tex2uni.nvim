@@ -95,7 +95,7 @@ local function insert_char_pre()
 	local char = vim.api.nvim_get_vvar("char")
 
 	if abbreviations.abbr_mark then
-		if char == " " then
+		if char == "<Tab>" then
 			vim.schedule(abbreviations.convert)
 			return
 		end
