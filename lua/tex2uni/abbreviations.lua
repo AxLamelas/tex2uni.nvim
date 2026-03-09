@@ -99,6 +99,10 @@ local function insert_char_pre()
 			vim.schedule(abbreviations.convert)
 			return
 		end
+		if char == " " then
+			_clear_abbr_mark()
+			return
+		end
 	end
 
 	-- typing \\ should result in \ and exit abbreviation mode
