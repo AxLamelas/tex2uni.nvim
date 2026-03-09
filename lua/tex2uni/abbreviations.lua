@@ -100,7 +100,7 @@ local function insert_char_pre()
 			return
 		end
 		if char == " " then
-			vim.schedule(_clear_abbr_mark())
+			vim.schedule(_clear_abbr_mark)
 			return
 		end
 	end
