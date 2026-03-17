@@ -255,8 +255,8 @@ function abbreviations.enable(pattern, opts)
 	local augroup = vim.api.nvim_create_augroup("tex2uniAbbreviations", { clear = false })
 	for event, callback in pairs({
 		InsertCharPre = insert_char_pre,
-		InsertLeave = abbreviations.convert,
-		BufLeave = abbreviations.convert,
+		InsertLeave = _clear_abbr_mark, -- abbreviations.convert,
+		BufLeave = _clear_abbr_mark -- abbreviations.convert,
 	}) do
 		vim.api.nvim_create_autocmd(event, {
 			group = augroup,
